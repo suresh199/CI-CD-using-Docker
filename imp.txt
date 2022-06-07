@@ -1,0 +1,103 @@
+ sshagent(['jenkins']) {
+            sh 'ssh -t -t ec2-user@54.237.21.140 -o StrictHostKeyChecking=no "docker run -d -p 8003:8080 nikhilnidhi/samplewebapp"'   
+           }
+
+
+sh 'ssh -t -t ec2-user@54.237.21.140 -o StrictHostKeyChecking=no "docker run -d -p 8003:8080 nikhilnidhi/samplewebapp"'
+
+
+
+
+docker run -d -p 8003:8080
+
+
+
+Newer Linux kernels may rename your devices to /dev/xvdf through /dev/xvdp internally, even when the device name entered here (and shown in the details) is /dev/sdf through /dev/sdp. nikhilnidhi/samplewebapp
+
+
+
+
+LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCakNDQWU2Z0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJeU1EWXdOakE1TWpJeE5sb1hEVE15TURZd05EQTVNakl4Tmxvd0ZURVRNQkVHQTFVRQpBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTFpGCmRPQlMwblMrUC9RbkhSOE9BRlZpZFFVZ3B2NlN4NHJBVmZYVHhXVmVuZWNEaDBuc25oWkJ4azQxMFkrS3AvRjEKUDRzeFFsN1k5d3U2c3BaT0I0TG1ESUtJOHBnMmw3MnFNcVZPSUt1QVdwTE54SGxqTW5mVC96bVpjdHlHL3NVbApna3BFaFpMYmdDK1ZwdUkxVWxOdUpOTnJhNmZJakRZSUpraUZOKzcxTC9LZERpMTRZR2YyelI3SmZsc09EMWw3CnBxV3lWM0oySFROL1ErL3pEY0tHdmN0a2F1RTJmODVScW1wU2Z1VVREbnlpUE5KTEtQTWdWUDQ3c3BnS2VuTGIKYnJjUU94QTVzMFd5UFc5Z3NSZ2pud3cxRnRLUWlvd3NxMVZPNktIeHlCMFAxVmszdFcrOEpOemtPK0hpWFhXTApib1FTSXIvQ0t2OVMwbk42OVNzQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVcKQkJUcDNUS0xadkU0aUN1MHlTdjY1M1c0SVZtZER6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFPOVMxZEYvawpwNEJmRjdGTm1WRXdDbnh1UWFDYVZ2VU9sLzBqdDhSSFlTZXd5c1Q3M3lnVHpqeDkvUGJMWlJDV2dOalZ0elNyCnR2WXBydjh2dUdSUXRjRVpISnhwdHhYYisvTG14Zi9NZzBHYm92L3pnam1zc0JNMHpneHRya3ZoTVdtU0RDTlAKNUFsZk5LbUxnTzBHY1lWdHNkaDFwOU05TE5XTmNGcnJ3ZkVMUm5NdVFxWks4UHF0RDNMMFR0MUJseTliS0htbQoyNGp3bmRSWGR5K2xZcEpydmttVXBOS0NITXdUTVFlWFQxQmVLWE1NaFJoN3VTckJuSnFkNll1UXdlaFZuakMxCjJ6My9scHdpWElpRlBHY041TVlJZVBuWG4yVndBd1JmMzVqaTRIWnFkc3dya1p3OUpIYy9qb1NXNlIyYjZod2MKQmtRdEFHZVVsNEF1L3c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+
+
+
+
+pipeline {
+    agent any
+
+  
+
+    stages {
+        stage('Build') {
+            steps {
+                withCredentials([file(credentialsId: 'kube', variable: 'KUBECRED')]) {
+   
+   
+   sh 'cat $KUBECRED > ~/.kube/config'
+   sh 'kubectl get all'
+   
+}
+            }
+}
+
+    }
+}
+           
+    
+
+
+
+
+<%@ page import="java.sql.*"%>
+<%
+    String userName = request.getParameter("userName");   
+    String password = request.getParameter("password");
+    String firstName = request.getParameter("firstName");
+    String lastName = request.getParameter("lastName");
+    String email = request.getParameter("email");
+    Class.forName("com.mysql.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://db:3306/testdb1",
+            "testuser", "root");
+    Statement st = con.createStatement();
+    int i = st.executeUpdate("insert into USER(first_name, last_name, email, username, password, regdate) values ('" + firstName + "','"
+    + lastName + "','" + email + "','" + userName + "','" + password + "', CURDATE())");
+    if (i > 0) {
+        response.sendRedirect("welcome.jsp");
+        
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
+
+
+
+==============================================
+
+
+<%@ page import="java.sql.*"%>
+<%
+    String userName = request.getParameter("userName");   
+    String password = request.getParameter("password");
+    String firstName = request.getParameter("firstName");
+    String lastName = request.getParameter("lastName");
+    String email = request.getParameter("email");
+    Class.forName("com.mysql.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://db:3306/testdb1",
+            "testuser", "root");
+    Statement st = con.createStatement();
+    int i = st.executeUpdate("insert into USER(first_name, last_name, email, username, password, regdate) values ('" + firstName + "','"
+    + lastName + "','" + email + "','" + userName + "','" + password + "', CURDATE())");
+    if (i > 0) {
+        response.sendRedirect("welcome.jsp");
+        
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
+
+
+
+
+===================
+
+/home/ec2-user/apache-tomcat-8.5.79/webapps/
